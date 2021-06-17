@@ -62,7 +62,7 @@ if (length(splitargs$code_labels) > 0 &&
     code_labels <- openxlsx::read.xlsx(xlsxFile = splitargs$code_labels)
 }
 
-r <- dq_report(study_data = sd0, meta_data = md0, cores = detectCores() - 1, # TODO use maybe parallelly::availableCores() instead?
+r <- dq_report(study_data = sd0, meta_data = md0, cores = parallelly::availableCores(),
                dimensions = c("Completeness", "Consistency", "Accuracy"),
                label_col = label_col,
                check_table     = checks,

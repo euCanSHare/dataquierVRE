@@ -7,7 +7,7 @@
 ###
 
 
-DEPENDENCIES=("python")  # TODO add your software dependencies (e.g. DEPENDENCIES=("Rscript","docker")
+DEPENDENCIES=("python","Rscript")  # TODO add your software dependencies (e.g. DEPENDENCIES=("Rscript","docker")
 PROGNAME="VRE_RUNNER.py"
 
 # Validate dependencies
@@ -31,6 +31,13 @@ for prog in $(echo $DEPENDENCIES | sed "s/,/ /g"); do
     exit 1
   fi
 done
+
+# check R dependencies
+Rscript -e 'if (R.Version()$major < 4) stop("Need at least R 4.0")' || exit 1
+"$BASEDIR/check_r_package.R" "dataquieR" "1.0.5" || exit 1
+"$BASEDIR/check_r_package.R" "openxlsx" "4.2.3" || exit 1
+"$BASEDIR/check_r_package.R" "parallelly" "1.25.0" || exit 1
+
 
 # Run VRE_RUNNER
 
