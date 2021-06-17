@@ -132,6 +132,26 @@ class myTool(Tool):
             mdf = input_metadata.get("meta_data")[1]
             meta_data_file_type = mdf.file_type
 
+            if "consistency_check_table" in input_files:
+                checks = input_files.get("consistency_check_table")
+                if not os.path.isabs(checks):  # convert to abspath if is relpath
+                    checks = os.path.normpath(os.path.join(self.parent_dir, checks))
+                checks = "checks=" + checks
+                mdf = input_metadata.get("consistency_check_table")[1]
+                checks_file_type = "checks_file_type=" + mdf.file_type
+            else:
+                checks = None
+                checks_file_type = None
+
+            if "code_labels" in input_files:
+                code_labels = input_files.get("code_labels")
+                if not os.path.isabs(code_labels):  # convert to abspath if is relpath
+                    code_labels = os.path.normpath(os.path.join(self.parent_dir, code_labels))
+                code_labels = "code_labels=" + code_labels
+                mdf = input_metadata.get("code_labels")[1]
+                code_labels_file_type = "code_labels_file_type=" + mdf.file_type
+            else:
+                code_labels = None
 
 #            meta_data = input_files.get("meta_data")
 #            if not os.path.isabs(meta_data):  # convert to abspath if is relpath
@@ -146,12 +166,9 @@ class myTool(Tool):
 #
 #            mdf = input_metadata.get("meta_data")[1]
 #            meta_data_file_type = mdf.file_type
-
-            # TODO: add more input files to use, if it is necessary for you
 
             # Get arguments
             label_col = self.arguments.get("label_col")
-            # TODO: add more arguments to use, if it is necessary for you
 
             # Tool execution
             cmd = [
@@ -162,10 +179,13 @@ class myTool(Tool):
                 meta_data,              # meta_data
                 meta_data_file_type,    # file type
                 label_col,              # label_col argument, default: VAR_NAMES
-                "checks=42",
-                "code_labels=64"
+                checks,
+                checks_file_type,
+                code_labels,
+                code_labels_file_type,
             ]
-            process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            process = subprocess.Popen([x for x in cmd if x is not None],
+                                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             # TODO: change command line to run <myApplication>
 
             # Sending the stdout to the log file

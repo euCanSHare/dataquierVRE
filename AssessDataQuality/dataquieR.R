@@ -13,7 +13,7 @@ label_col <- args[[5]]
 add_args <- tail(args, -5)
 
 if (length(add_args)) {
-    splitargs <- strsplit(add_args, "\\s*=\\s*", perl = TRUE)
+    splitargs <- strsplit(add_args, "\\s*=\\s*", perl = TRUE) # TODO only the first =
     if (!all(vapply(splitargs, length, FUN.VALUE = integer(1)) == 2)) {
         stop(paste("Cannot parse command line arguments: ", deparse(add_args)))
     }
@@ -38,34 +38,31 @@ meta_data <- openxlsx::read.xlsx(xlsxFile = meta_data_file)
 library(dataquieR)
 library(parallel)
 
-#load(system.file("extdata", "study_data.RData", package = "dataquieR"))
-#load(system.file("extdata", "meta_data.RData", package = "dataquieR"))
-#code_labels <- read.csv2(system.file("extdata",
-#                                     "Missing-Codes-2020.csv",
-#                                     package = "dataquieR"),
-#                         stringsAsFactors = FALSE, na.strings = c())
-#checks <- read.csv(system.file("extdata",
-#                               "contradiction_checks.csv",
-#                               package = "dataquieR"),
-#                   header = TRUE, sep = "#")
 sd0 <- study_data
 md0 <- meta_data
 
 checks <- NULL
 code_labels <- NULL
 
-if (length(splitargs$checks) > 0) {
-    # checks <-
+if (length(splitargs$checks) > 0 &&
+    length(splitargs$checks_file_type) > 0) {
+    if (splitargs$checks_file_type != "XLSX") {
+        stop("Cannot handle other file types than Excel yet.")
+    }
+    message(sprintf("Reading %s...", dQuote(splitargs$checks)))
+    checks <- openxlsx::read.xlsx(xlsxFile = splitargs$checks)
 }
 
-if (length(splitargs$code_labels) > 0) {
-    # code_labels <-
+if (length(splitargs$code_labels) > 0 &&
+    length(splitargs$code_labels_file_type) > 0) {
+    if (splitargs$code_labels_file_type != "XLSX") {
+        stop("Cannot handle other file types than Excel yet.")
+    }
+    message(sprintf("Reading %s...", dQuote(splitargs$code_labels)))
+    code_labels <- openxlsx::read.xlsx(xlsxFile = splitargs$code_labels)
 }
 
-# sd0 <- readRDS(system.file("extdata", "ship.RDS", package = "dataquieR"))
-# md0 <- readRDS(system.file("extdata", "ship_meta.RDS", package = "dataquieR"))
-
-r <- dq_report(study_data = sd0, meta_data = md0, cores = detectCores() - 1, # use maybe parallelly::availableCores() instead?
+r <- dq_report(study_data = sd0, meta_data = md0, cores = detectCores() - 1, # TODO use maybe parallelly::availableCores() instead?
                dimensions = c("Completeness", "Consistency", "Accuracy"),
                label_col = label_col,
                check_table     = checks,
