@@ -1,112 +1,126 @@
 [
     {
-        "_id": "unique_file_id_5e14abe0a37012.29503905",
-        "file_path": "/home/victor/vre_sample_tool/tests/basic/image1.nii.gz",
-        "file_type": "NIFTI",
-        "data_type": "bioimage",
-        "compressed": "GZ",
-        "user_id": "user_id",
-        "creation_time": {
-            "sec": 1578413024,
-            "usec": 0
-        },
-        "meta_data": {
-            "type": "file",
-            "size": 0,
-            "project": "my_project_id",
-            "atime": {
-                "sec": 1578413024,
-                "usec": 0
-            },
-            "parentDir": "unique_file_id_5e14abe0a37742.64003100",
-            "lastAccess": {
-                "sec": 1578413024,
-                "usec": 0
-            }
-        },
-        "sources": []
-    },
-     {
-        "_id": "unique_file_id_5e14abe0a37012.29503906",
-        "file_path": "/home/victor/vre_sample_tool/tests/basic/image2.nii.gz",
-        "file_type": "NIFTI",
-        "data_type": "bioimage",
-        "compressed": "GZ",
-        "user_id": "user_id",
-        "creation_time": {
-            "sec": 1578413024,
-            "usec": 0
-        },
-        "meta_data": {
-            "type": "file",
-            "size": 0,
-            "project": "my_project_id",
-            "atime": {
-                "sec": 1578413024,
-                "usec": 0
-            },
-            "parentDir": "unique_file_id_5e14abe0a37742.64003100",
-            "lastAccess": {
-                "sec": 1578413024,
-                "usec": 0
-            }
-        },
-        "sources": []
-    },
-    
-    {
-        "_id": "unique_file_id_5e14abe0a37012.29503907",
-        "file_path": "/home/victor/vre_sample_tool/tests/basic/image3.nii.gz",
-        "file_type": "NIFTI",
-        "data_type": "bioimage",
-        "compressed": "GZ",
-        "user_id": "user_id",
-        "creation_time": {
-            "sec": 1578413024,
-            "usec": 0
-        },
-        "meta_data": {
-            "type": "file",
-            "size": 0,
-            "project": "my_project_id",
-            "atime": {
-                "sec": 1578413024,
-                "usec": 0
-            },
-            "parentDir": "unique_file_id_5e14abe0a37742.64003100",
-            "lastAccess": {
-                "sec": 1578413024,
-                "usec": 0
-            }
-        },
-        "sources": []
-    },    
-    
-    {
-        "_id": "unique_file_id_5e14abe0a37012.29503908",
-        "file_path": "/home/victro/models/model1",
-        "file_type": "TXT",
-        "data_type": "deep_learning_model",
+        "_id": "unique_file_id_60c899cd5422e5.49261187",
+        "file_path": "tests/basic/study_data.xlsx",
+        "file_type": "XLSX",
+        "data_type": "study_data",
         "compressed": 0,
+        "sources": [],
         "user_id": "user_id",
         "creation_time": {
-            "sec": 1578413024,
-            "usec": 0
+            "$date": {
+                "$numberLong": "1623759309000"
+            }
         },
+        "taxon_id": 0,
         "meta_data": {
-            "type": "dir",
+            "type": "file",
             "size": 0,
             "project": "my_project_id",
             "atime": {
-                "sec": 1578413024,
-                "usec": 0
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
             },
-            "parentDir": "unique_file_id_5e14abe0a37742.64003100",
+            "parentDir": "unique_file_id_60c899cd542563.51178309",
             "lastAccess": {
-                "sec": 1578413024,
-                "usec": 0
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            }
+        }
+    },
+    {
+        "_id": "unique_file_id_60c899cd542770.49154542",
+        "file_path": "tests/basic/meta_data.xlsx",
+        "file_type": "XLSX",
+        "data_type": "study_meta_data",
+        "compressed": 0,
+        "sources": [],
+        "user_id": "user_id",
+        "creation_time": {
+            "$date": {
+                "$numberLong": "1623759309000"
             }
         },
-        "sources": []
+        "taxon_id": 0,
+        "meta_data": {
+            "type": "file",
+            "size": 0,
+            "project": "my_project_id",
+            "atime": {
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            },
+            "parentDir": "unique_file_id_60c899cd542925.97481008",
+            "lastAccess": {
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            }
+        }
+    },
+    {
+        "_id": "unique_file_id_60c899cd542770",
+        "file_path": "tests/basic/checks.xlsx",
+        "file_type": "XLSX",
+        "data_type": "consistency_check_table",
+        "compressed": 0,
+        "sources": [],
+        "user_id": "user_id",
+        "creation_time": {
+            "$date": {
+                "$numberLong": "1623759309000"
+            }
+        },
+        "taxon_id": 0,
+        "meta_data": {
+            "type": "file",
+            "size": 0,
+            "project": "my_project_id",
+            "atime": {
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            },
+            "parentDir": "unique_file_id_60c899cd542925.97481008",
+            "lastAccess": {
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            }
+        }
+    },
+    {
+        "_id": "unique_file_id_60c899ad332770.49154542",
+        "file_path": "tests/basic/code_labels.xlsx",
+        "file_type": "XLSX",
+        "data_type": "missing_code_label_table",
+        "compressed": 0,
+        "sources": [],
+        "user_id": "user_id",
+        "creation_time": {
+            "$date": {
+                "$numberLong": "1623759309000"
+            }
+        },
+        "taxon_id": 0,
+        "meta_data": {
+            "type": "file",
+            "size": 0,
+            "project": "my_project_id",
+            "atime": {
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            },
+            "parentDir": "unique_file_id_60c899cd542925.97481008",
+            "lastAccess": {
+                "$date": {
+                    "$numberLong": "1623759309000"
+                }
+            }
+        }
     }
 ]

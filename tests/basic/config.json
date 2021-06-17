@@ -1,55 +1,55 @@
 {
     "input_files": [
         {
-            "name": "images",
-            "value": "unique_file_id_5e14abe0a37012.29503905",
+            "name": "study_data",
+            "value": "unique_file_id_60c899cd5422e5.49261187",
             "required": true,
-            "allow_multiple": true
+            "allow_multiple": false
         },
         {
-            "name": "images",
-            "value": "unique_file_id_5e14abe0a37012.29503906",
+            "name": "meta_data",
+            "value": "unique_file_id_60c899cd542770.49154542",
             "required": true,
-            "allow_multiple": true
+            "allow_multiple": false
         },
         {
-            "name": "images",
-            "value": "unique_file_id_5e14abe0a37012.29503907",
-            "required": true,
-            "allow_multiple": true
+            "name": "consistency_check_table",
+            "value": "unique_file_id_60c899cd542770.49143242",
+            "required": false,
+            "allow_multiple": false
         },
         {
-            "name": "model",
-            "value": "unique_file_id_5e14abe0a37012.29503908",
-            "required": true,
+            "name": "code_labels",
+            "value": "unique_file_id_60c899ad332770.49154542",
+            "required": false,
             "allow_multiple": false
         }
     ],
     "arguments": [
         {
             "name": "execution",
-            "value": "/home/victor/vre_sample_tool/tests/basic/run000"
+            "value": "tests/basic/run000"
         },
         {
             "name": "project",
             "value": "my_project_id"
         },
         {
-            "name": "myArgument",
-            "value": "hg38"
+            "name": "label_col",
+            "value": "LABEL"
         }
     ],
     "output_files": [
         {
-            "name": "masks",
+            "name": "report",
             "required": true,
-            "allow_multiple": true,
+            "allow_multiple": false,
             "file": {
-                "file_type": "NIFTI",
-                "data_type": "image_mask",
+                "file_type": "HTML",
+                "data_type": "report",
                 "meta_data": {
                     "visible": true,
-                    "description": "Biomimage Mask"
+                    "description": "Data Quality Assessment Report"
                 }
             }
         }
