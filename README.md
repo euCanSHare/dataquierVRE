@@ -13,10 +13,9 @@ look at the configure-script for configuration:
 
 # TODOs:
 
-- [euCanSHAre Github Organization](https://github.com/orgs/euCanSHare/): Move this project this organization
-
-- Adjust the tool defintion, discuss, if the two optional output files are registered correctly and if the label_col-Argument
-  will be visible in the tool's run configuration dialog.
+- @Laia: Please add the following two data types: 
+ - missing_code_label_table
+ - consistency_check_table
 
 ## Requirements
 

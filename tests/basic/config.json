@@ -34,9 +34,19 @@
             "name": "project",
             "value": "my_project_id"
         },
-        {
+       {
             "name": "label_col",
-            "value": "LABEL"
+            "description": "Label-Column",
+            "help": "Which column contains user-readable variable labels. Labels must be alphanumerical starting with letters.",
+            "type": "enum",
+            "value": "LABEL",
+            "enum_items": {
+                "name": [
+                    "VAR_NAMES",
+                    "LABEL",
+                    "LONG_LABEL"
+                ]
+            }
         }
     ],
     "output_files": [
