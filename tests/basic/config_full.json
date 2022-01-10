@@ -11,6 +11,18 @@
             "value": "unique_file_id_60c899cd542770.49154542",
             "required": true,
             "allow_multiple": false
+        },
+        {
+            "name": "consistency_check_table",
+            "value": "unique_file_id_60c899cd542770.49143242",
+            "required": false,
+            "allow_multiple": false
+        },
+        {
+            "name": "code_labels",
+            "value": "unique_file_id_60c899ad332770.49154542",
+            "required": false,
+            "allow_multiple": false
         }
     ],
     "arguments": [

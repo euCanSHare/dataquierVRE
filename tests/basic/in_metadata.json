@@ -1,7 +1,7 @@
 [
     {
         "_id": "unique_file_id_60c899cd5422e5.49261187",
-        "file_path": "tests/basic/study_data.xlsx",
+        "file_path": "tests/basic/data/study_data.xlsx",
         "file_type": "XLSX",
         "data_type": "study_data",
         "compressed": 0,
@@ -32,7 +32,7 @@
     },
     {
         "_id": "unique_file_id_60c899cd542770.49154542",
-        "file_path": "tests/basic/meta_data.xlsx",
+        "file_path": "tests/basic/data/meta_data.xlsx",
         "file_type": "XLSX",
         "data_type": "study_meta_data",
         "compressed": 0,
@@ -63,7 +63,7 @@
     },
     {
         "_id": "unique_file_id_60c899cd542770.49143242",
-        "file_path": "tests/basic/checks.xlsx",
+        "file_path": "tests/basic/data/checks.xlsx",
         "file_type": "XLSX",
         "data_type": "consistency_check_table",
         "compressed": 0,
@@ -94,7 +94,7 @@
     },
     {
         "_id": "unique_file_id_60c899ad332770.49154542",
-        "file_path": "tests/basic/code_labels.xlsx",
+        "file_path": "tests/basic/data/code_labels.xlsx",
         "file_type": "XLSX",
         "data_type": "missing_code_label_table",
         "compressed": 0,
